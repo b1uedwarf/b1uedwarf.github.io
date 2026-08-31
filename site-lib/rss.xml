@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Portfolio_김상민_]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>Portfolio_김상민_</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 31 Aug 2026 04:53:15 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 31 Aug 2026 04:53:12 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Portfolio]]></title><description><![CDATA[생년월일 2000.08.08<img alt="kakaotalk_20240625_154721073_12.jpg" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_12.jpg" target="_self" style="width: 400px; max-width: 100%;"><br><img alt="kakaotalk_20240625_154644033_11.jpg" src="3.personal/ksm/포폴/img/006/img/kakaotalk_20240625_154644033_11.jpg" target="_self" style="width: 400px; max-width: 100%;"><br><img alt="KakaoTalk_20260828_200612301_01.jpg" src="3.personal/ksm/포폴/img/008/img/kakaotalk_20260828_200612301_01.jpg" target="_self" style="width: 400px; max-width: 100%;">]]></description><link>portfolio.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/Portfolio.md</guid><pubDate>Sat, 29 Aug 2026 04:06:16 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_12.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_12.jpg&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[10. Gaussian Splatting 기반 Face Relighting 연구]]></title><description><![CDATA[Gaussian Splatting을 이용하여 얼굴의 3D 표현을 구성하고, 다양한 조명 조건에서 얼굴의 appearance를 재현하는 Relighting 연구.자체 구축한 Light Stage Studio System을 이용하여 RGBW OLAT 데이터를 직접 촬영할 수 있는 환경을 구성하고, 이를 Gaussian Splatting 기반 Relighting 연구와 연계하는 방향으로 진행.기존 Gaussian Splatting 기반 3D Representation에 조명 정보를 결합하여, 새로운 조명 조건에서도 얼굴의 appearance를 자연스럽게 생성할 수 있는 Face Relighting 연구를 목표로 진행.주요 관심 요소:
+얼굴 Geometry 및 Appearance Representation
+View-dependent Appearance
+Lighting Representation
+Diffuse / Specular Component
+Relighting under Novel Illumination
+Multi-view / OLAT Supervision
+직접 구축한 Light Stage Studio System을 이용하여 Relighting 연구에 사용할 수 있는 RGBW OLAT 데이터 취득 환경을 구성.
+개별 Light 제어
+OLAT 촬영
+RGBW LED 제어
+사용자 정의 Light Pattern 생성 Multi-view Camera System
+얼굴을 다양한 Viewpoint에서 동시 촬영
+고속 Camera Acquisition
+이를 이용하여 각 광원 및 색상 조건에 따른 얼굴 appearance를 직접 관측할 수 있는 데이터 취득 환경을 확보.Gaussian Splatting 기반 얼굴 표현과 RGBW OLAT 데이터를 결합하여 다음과 같은 방향을 검토.
+Gaussian별 Appearance Modeling
+조명 변화에 따른 Gaussian Appearance 변화
+RGBW OLAT 기반 Lighting Decomposition
+Diffuse / Specular Component Modeling
+Novel Light Condition에서의 Face Relighting ]]></description><link>sub/10.-gaussian-splatting-기반-face-relighting-연구.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/10. Gaussian Splatting 기반 Face Relighting 연구.md</guid><pubDate>Fri, 28 Aug 2026 15:00:56 GMT</pubDate></item><item><title><![CDATA[09. Inverse Rendering & Relighting — APSIPA Publication]]></title><description><![CDATA[Diffusion 기반 Relighting 결과가 시각적으로 자연스럽더라도 실제 광원에 의해 발생해야 하는 Specular Highlight의 위치와 세기, 색상 특성이 물리적으로 일치하는지를 분석하고 평가하는 연구.
+Title: Relighting Artifact Analysis in Face Manipulation via OLAT-Guided PBR Reference
+Conference: APSIPA
+Status: Accepted
+Field: Inverse Rendering · Relighting · Computer Graphics
+기존 Diffusion 기반 Relighting은 자연스러운 이미지를 생성할 수 있지만 실제 조명 환경과 비교했을 때 다음과 같은 물리적 불일치가 발생할 수 있음.
+Specular Highlight 위치 불일치
+Highlight Intensity 차이
+비반사 영역의 색상 변화
+실제 조명 조건과 다른 광학적 표현
+이를 정량적으로 평가하기 위해 실제 OLAT 촬영 데이터와 PBR 기반 Reference를 이용한 Relighting Evaluation Framework를 구성.실제 OLAT 이미지와 비교할 수 있는 물리 기반 Reference를 생성하기 위해 다양한 Light Model과 Rendering Equation을 조합하여 최적화.
+Directional Light
+Point Light
+Spherical Harmonics (SH)
+Spherical Gaussians (SG) Phong
+Cook-Torrance
+Subsurface Scattering (SSS)
+총 12개의 Light / Rendering 조합을 동일한 조건에서 학습 및 비교.
+Per-pixel Albedo
+Roughness
+Metallic
+Light Intensity
+Held-out OLAT 데이터를 이용해 각 조합의 Rendering 성능을 비교하고, 최종적으로 Point Light + Phong Rendering을 PBR Reference로 사용.Diffusion Relighting에서 특히 문제가 되는 Specular Highlight를 정량적으로 비교하기 위해 Specular Highlight Map을 구성.이미지의 Luminance 정보와 Local Contrast를 이용하여 Highlight 영역을 추출하고 Reference와 Prediction의 Specular 영역을 비교.
+Specular IoU Prediction과 Reference의 Highlight 위치 일치도 Specular Intensity Error Highlight 영역의 평균 밝기 차이 이를 통해 단순한 이미지 유사도뿐 아니라 광원이 실제로 만들어내야 하는 반사 특성이 올바르게 생성되었는지 평가.Relighting 결과를 세 가지 관점에서 평가.
+RGB L1
+Luminance SSIM 전체적인 얼굴 구조와 밝기 분포의 유사도를 평가.
+Specular IoU
+Specular Intensity Error 광원에 의해 발생하는 Specular Highlight의 위치와 세기를 평가.
+Specular 영역을 제외한 Chromaticity L1 Relighting 과정에서 발생하는 불필요한 색상 변화를 평가.실제 OLAT 이미지와 PBR Reference를 기준으로 Diffusion 기반 Relighting 결과를 비교.
+Ground Truth OLAT
+PBR Optimization Result
+Neural Gaffer
+IC-Light PSNR, SSIM과 같은 기존 Image Quality Metric뿐 아니라 Specular 및 Chromaticity Metric을 함께 사용하여 Relighting의 물리적 일관성을 평가.
+OLAT 기반 Relighting Evaluation Framework 구성
+다양한 Light / Rendering Model을 비교하는 PBR Optimization Framework 구현
+Specular Highlight Map 기반 Highlight 위치 및 Intensity 평가 방법 구성
+Facial Fidelity / Specular Consistency / Chromaticity 기반의 다축 평가 방식 구성
+Diffusion Relighting의 시각적 품질과 물리적 일관성 사이의 차이 분석 ]]></description><link>sub/09.-inverse-rendering-&amp;-relighting-—-apsipa-publication.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/09. Inverse Rendering &amp; Relighting — APSIPA Publication.md</guid><pubDate>Fri, 28 Aug 2026 15:00:52 GMT</pubDate></item><item><title><![CDATA[08. Light Stage Studio]]></title><description><![CDATA[<img alt="KakaoTalk_20260828_200612301_01.jpg" src="3.personal/ksm/포폴/img/008/img/kakaotalk_20260828_200612301_01.jpg" target="_self" style="width: 400px; max-width: 100%;"><br><img alt="KakaoTalk_20260828_200927961_05.jpg" src="3.personal/ksm/포폴/img/008/img/kakaotalk_20260828_200927961_05.jpg" target="_self" style="width: 400px; max-width: 100%;">기존 스튜디오의 조명 및 카메라 시스템을 개선하여 더 높은 광량, 자유로운 조명 패턴 제어, 고속 다중 카메라 촬영이 가능하도록 시스템을 재구성.
+낮은 광량
+OLAT Control 불가
+White Light만 출력 가능 LED 출력 향상: 16W → 64W
+OLAT를 포함한 자유로운 Light Pattern 입력 가능
+R / G / B / W LED를 이용한 다양한 색상 제어
+개별 LED 및 다중 LED 패턴 제어 가능
+하드웨어의 실제 제작은 외부 업체에서 진행하였으며, 시스템 설계, 하드웨어 사양 결정, 외주 업체와의 기술 협의, Firmware 및 Software 개발을 포함한 전체 개발 과정을 담당.
+LED Module 내부 제어 코드
+Light Signal Transmitter 코드
+Lighting Control UI
+Light Pattern Control Logic
+5MP Camera는 Hardware Specification상 최대 72 FPS 촬영이 가능했으나, 기존 시스템에서는 60 FPS 촬영 시 Frame Drop이 빈번하게 발생.
+약 10초 이후부터 안정적인 촬영 유지 불가
+데이터 처리 과정의 불필요한 복사 및 연산
+RAM 사용량 지속 증가
+Camera 수 증가에 따라 처리 병목 심화
+기존 Camera Acquisition Pipeline을 분석하여 데이터 처리 및 Memory Management 과정의 비효율을 개선.
+Camera Frame 처리 구조 개선
+불필요한 Memory Copy 최소화
+RAM 사용 구조 최적화
+Camera Resource Management 개선
+Hardware 성능을 최대한 활용할 수 있도록 Acquisition Pipeline 수정 5MP Camera 54대
+60 FPS약 55초간 안정적인 촬영 가능 기존 약 10초 수준에서 유지되던 촬영 시간을 하드웨어 변경 없이 약 55초까지 확장하고, 고속 다중 카메라 환경에서 안정적인 데이터 수집이 가능하도록 개선.]]></description><link>sub/08.-light-stage-studio.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/08. Light Stage Studio.md</guid><pubDate>Fri, 28 Aug 2026 15:00:47 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/008/img/kakaotalk_20260828_200612301_01.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/008/img/kakaotalk_20260828_200612301_01.jpg&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[07. PID 제어]]></title><description><![CDATA[<img alt="pasted-image-20240703013643.png" src="3.personal/ksm/포폴/img/007/img/pasted-image-20240703013643.png" target="_self">PT100Ω 온도 센서의 값을 MAX31865를 통해 읽고, 현재 온도를 기반으로 PID 제어를 수행하여 출력 값을 조절하는 구조.
+MAX31865를 통해 PT100Ω 센서 값 측정
+현재 온도 계산
+목표 온도와 현재 온도의 차이를 기반으로 PID 제어 수행
+0V ~ 3.3V 범위의 출력 생성
+출력 범위를 0% ~ 100%로 제어
+현재 온도와 사용자가 설정한 목표 온도를 비교하여 PID 제어를 수행.
+Input: PT100Ω Temperature Sensor
+Temperature Measurement: MAX31865
+Controller: ESP32
+Control: PID
+Output: 0V ~ 3.3V 출력 값은 0% ~ 100% 범위에서 제한하여 사용할 수 있도록 구성.<br><img alt="캡123처.png" src="3.personal/ksm/포폴/img/007/img/캡123처.png" target="_self">Unity 기반 Controller UI를 통해 현재 상태 확인 및 제어 파라미터 설정.
+현재 온도 표시
+현재 출력 값 표시
+목표 온도 설정
+최대 출력 제한 설정
+0V ~ 3.3V 출력 값을 비율 단위로 제어
+두 개의 출력 값을 별도로 설정하여 특정 조건에서 GPIO를 제어할 수 있도록 구성.예를 들어 Scale을 100으로 설정하면 출력 상태를 0~100 범위의 비율 값으로 표현할 수 있음.]]></description><link>sub/07.-pid-제어.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/07. PID 제어.md</guid><pubDate>Fri, 28 Aug 2026 15:00:45 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/007/img/pasted-image-20240703013643.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/007/img/pasted-image-20240703013643.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[06. 6축 로봇 제어]]></title><description><![CDATA[<img alt="kakaotalk_20240625_154644033_11.jpg" src="3.personal/ksm/포폴/img/006/img/kakaotalk_20240625_154644033_11.jpg" target="_self">Dobot, Han's Robot, Anno Robot 등 여러 종류의 6축 로봇을 대상으로 제어 시스템을 구현.
+Python 기반 로봇 제어
+로봇별 통신 방식에 따른 제어 인터페이스 구성
+UART 및 UDP 통신 활용 6축 로봇 제어
+Python 기반 통신 및 동작 제어 6축 로봇 제어
+Python 기반 통신 및 동작 제어 6축 로봇 제어
+Python 기반 통신 및 동작 제어
+<br><img alt="KakaoTalk_20240625_154644033_11.jpg" src="3.personal/ksm/포폴/img/006/img/kakaotalk_20240625_154644033_11.jpg" target="_self">]]></description><link>sub/06.-6축-로봇-제어.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/06. 6축 로봇 제어.md</guid><pubDate>Fri, 28 Aug 2026 15:00:42 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/006/img/kakaotalk_20240625_154644033_11.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/006/img/kakaotalk_20240625_154644033_11.jpg&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[05. Communication Protocol Reverse Engineering]]></title><description><![CDATA[<img alt="kakaotalk_20240625_154644033.jpg" src="3.personal/ksm/포폴/img/005/img/kakaotalk_20240625_154644033.jpg" target="_self"><br><img alt="pasted-image-20240703002726.png" src="3.personal/ksm/포폴/img/005/img/pasted-image-20240703002726.png" target="_self">커피머신 내부의 SPI 통신 신호를 분석하고, 이를 기반으로 Arduino 계열 보드와 외부 Controller를 연결하여 제어할 수 있도록 시스템을 구성.Digital Oscilloscope를 이용하여 커피머신 내부 SPI 신호를 측정하고 동작 패턴을 분석.<br>
+<img alt="캡처1.png" src="3.personal/ksm/포폴/img/005/img/캡처1.png" target="_self">
+정상 동작 및 오류 발생 시 SPI 신호 확인
+커피머신 내부 제어 신호 구조 분석
+<br><img alt="pasted-image-20240703004427.png" src="3.personal/ksm/포폴/img/005/img/pasted-image-20240703004427.png" target="_self">ESP32 한 대에서 SPI Read와 MQTT 통신을 동시에 처리하도록 구성.
+ESP32의 SPI 통신에서 지속적인 Noise 및 신호 단절 발생
+Arduino Uno에서 동일한 SPI 신호를 수신할 경우 Noise가 발생하지 않음
+Touch Button 제어에 사용된 Photocoupler가 3.3V 신호를 인식하지 못하고 5V 이상의 신호만 인식
+<br><img alt="pasted-image-20240703004517.png" src="3.personal/ksm/포폴/img/005/img/pasted-image-20240703004517.png" target="_self">
+WiFi 통신을 지원하는 Arduino Uno 계열 보드를 사용하여 SPI와 MQTT를 하나의 보드에서 처리하도록 변경.SPI Read가 Interrupt 방식으로 동작하면서 처리 중 MQTT 신호가 무시되는 현상 발생.<br><img alt="pasted-image-20240703002726.png" src="3.personal/ksm/포폴/img/005/img/pasted-image-20240703002726.png" target="_self">
+SPI 신호 처리와 외부 통신 기능을 분리하여 최종 시스템 구조 구성.
+SPI 통신 처리
+외부 Controller와 MQTT 통신
+커피머신 제어 신호 전달
+Touch Button Control
+<br><img alt="캡처2.png" src="3.personal/ksm/포폴/img/005/img/캡처2.png" target="_self">
+Unity 기반 Controller UI를 통해 커피머신의 기능을 외부에서 제어.<br><img alt="KakaoTalk_20240625_154644033.jpg" src="3.personal/ksm/포폴/img/005/img/kakaotalk_20240625_154644033.jpg" target="_self">]]></description><link>sub/05.-communication-protocol-reverse-engineering.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/05. Communication Protocol Reverse Engineering.md</guid><pubDate>Fri, 28 Aug 2026 15:00:39 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/005/img/kakaotalk_20240625_154644033.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/005/img/kakaotalk_20240625_154644033.jpg&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[03. 밀양 아리랑 홍보관 전시 콘텐츠]]></title><description><![CDATA[밀양 아리랑 곡조에 맞추어 플라스틱 공을 프로젝션 화면에 던져 가사를 맞추는 인터랙티브 리듬게임.
+프로젝터를 이용하여 게임 화면을 벽면에 투사
+HOKUYO LiDAR 센서를 이용하여 공이 벽면에 충돌하는 위치를 인식
+감지된 위치에 따라 게임 내 상호작용 및 진행 처리 <img alt="pasted-image-20240701024943.png" src="3.personal/ksm/포폴/img/003/img/pasted-image-20240701024943.png" target="_self">
+HOKUYO LiDAR 센서를 사용하여 프로젝터가 투사된 벽면에 공을 던지면 상호작용이 발생하며 게임이 진행됨.]]></description><link>sub/03.-밀양-아리랑-홍보관-전시-콘텐츠.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/03. 밀양 아리랑 홍보관 전시 콘텐츠.md</guid><pubDate>Fri, 28 Aug 2026 15:00:31 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/003/img/pasted-image-20240701024943.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/003/img/pasted-image-20240701024943.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[02. 인천공항 프로젝트]]></title><description><![CDATA[<a data-tooltip-position="top" aria-label="https://youtu.be/uYz7SEY5y6s?si=ebB7-MMz0DukdAGV" rel="noopener nofollow" class="external-link is-unresolved" href="https://youtu.be/uYz7SEY5y6s?si=ebB7-MMz0DukdAGV" target="_self">국가유산채널 영상</a>문화유산 홍보관의 콘텐츠와 이용 가능한 편의시설을 안내하는 키오스크 콘텐츠.
+문화유산 관련 콘텐츠 안내
+투어리스트 센터 편의시설 정보 제공
+<br><img alt="pasted-image-20240701025521.png" src="3.personal/ksm/포폴/img/002/img/pasted-image-20240701025521.png" target="_self"><br><img alt="pasted-image-20240701022638.png" src="3.personal/ksm/포폴/img/002/img/pasted-image-20240701022638.png" target="_self">LG 투명 OLED를 활용하여 세계 각국의 현재 시각과 날씨 정보를 실시간으로 표시하는 정보 시스템.
+세계 주요 지역의 현재 시각 표시
+API를 통해 실시간 날씨 정보 수집
+현재 날씨 및 온도 표시
+투명 OLED 기반 정보 시각
+<br><img alt="pasted-image-20240701025647.png" src="3.personal/ksm/포폴/img/002/img/pasted-image-20240701025647.png" target="_self"><br><img alt="KakaoTalk_20231207_133135903_13.jpg" src="3.personal/ksm/포폴/img/002/img/kakaotalk_20231207_133135903_13.jpg" target="_self"><br><img alt="pasted-image-20240701023430.png" src="3.personal/ksm/포폴/img/002/img/pasted-image-20240701023430.png" target="_self">5가지의 간단한 질문을 통해 관광객의 성향을 분석하고 가장 잘 맞는 관광지 코스를 추천하는 콘텐츠.
+5가지 질문을 통한 사용자 성향 분류
+사용자 유형에 따른 관광 코스 추천
+Tablet 기반 인터랙티브 콘텐츠
+<br><img alt="pasted-image-20240701025610.png" src="3.personal/ksm/포폴/img/002/img/pasted-image-20240701025610.png" target="_self"><br><img alt="pasted-image-20240701024311.png" src="3.personal/ksm/포폴/img/002/img/pasted-image-20240701024311.png" target="_self">]]></description><link>sub/02.-인천공항-프로젝트.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/02. 인천공항 프로젝트.md</guid><pubDate>Fri, 28 Aug 2026 15:00:28 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/002/img/pasted-image-20240701025521.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/002/img/pasted-image-20240701025521.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[01.해외문화 홍보원 K-POP 전시]]></title><description><![CDATA[세계지도에서 국가를 터치하면 해당 국가에서 현재 인기 있는 K-POP 노래 5개를 표시하는 인터랙티브 콘텐츠.
+LiDAR 센서를 이용하여 프로젝션 화면에서 사용자의 터치 위치를 인식하도록 구현.<img alt="KakaoTalk_20240625_154753029_17.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154753029_17.jpg" target="_self" style="width: 400px; max-width: 100%;"><br><img alt="KakaoTalk_20240625_154753029_13.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154753029_13.jpg" target="_self" style="width: 400px; max-width: 100%;"><br><img alt="KakaoTalk_20240625_154729949_09.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154729949_09.jpg" target="_self" style="width: 400px; max-width: 100%;">
+현장 공간 및 LiDAR 센서 재고 문제로 인터랙티브 콘텐츠 제외
+영상 콘텐츠만 설치
+<br><img alt="KakaoTalk_20240625_154721073_19.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154721073_19.jpg" target="_self" style="width: 400px; max-width: 100%;">문제
+베트남 전시에서 LiDAR 센서를 바닥에 설치하였으나, 운영 중 관람객이 센서를 발로 건드리면서 센서 방향이 틀어지는 문제가 지속적으로 발생.
+해결
+이후 전시부터 LiDAR 센서를 상단에 설치
+벨기에 전시부터 변경된 설치 방식 적용 문제
+세계지도에서 국가 간 경계가 명확하게 구분되지 않아 국가 선택이 어려움.
+해결
+국가별로 서로 다른 색상을 적용하여 경계를 쉽게 확인할 수 있도록 UI 수정 Media Art 영상 콘텐츠를 전시 공간의 대형 가벽에 프로젝션하기 위한 프로젝터 설치 및 화면 구성 작업.
+현장 프로젝터 배치
+투사 영역 조정
+다중 프로젝터 화면 정렬
+Edge Blending
+<br><img alt="KakaoTalk_20240625_154830323_04.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154830323_04.jpg" target="_self" style="width: 500px; max-width: 100%;">
+프로젝터 설치 및 화면 정렬<br><img alt="KakaoTalk_20240625_154822334_02.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154822334_02.jpg" target="_self" style="width: 500px; max-width: 100%;">
+Edge Blending<br><img alt="KakaoTalk_20240625_154822334_03.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154822334_03.jpg" target="_self" style="width: 500px; max-width: 100%;">
+최종 설치<br><img alt="pasted-image-20240628233937.png" src="3.personal/ksm/포폴/img/001/img/pasted-image-20240628233937.png" target="_self" style="width: 500px; max-width: 100%;">
+프로젝터 설치<br><img alt="KakaoTalk_20240625_154729949_04.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154729949_04.jpg" target="_self" style="width: 500px; max-width: 100%;">
+Edge Blending<br><img alt="KakaoTalk_20240625_154729949_03.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154729949_03.jpg" target="_self" style="width: 500px; max-width: 100%;">
+최종 설치문제현장 설계도와 실제 공간이 일치하지 않았음.<br>
+<img alt="pasted-image-20240628231031.png" src="3.personal/ksm/포폴/img/001/img/pasted-image-20240628231031.png" target="_self" style="width: 500px; max-width: 100%;">
+설계도에 표시되지 않은 계단으로 인해 가벽이 예상보다 가까운 위치에 설치되었고, 프로젝터의 투사거리가 부족하여 화면이 가벽 전체를 채우지 못함.해결
+프로젝터를 최대한 좌우로 배치하여 투사거리 확보
+스페어 프로젝터 2대를 추가 투입
+다중 프로젝터 Edge Blending을 통해 하나의 화면으로 구성
+문제
+현장 공간이 좁아 일반적인 위치에서는 프로젝터의 투사거리와 투사각을 확보하기 어려웠음.<br>
+<img alt="KakaoTalk_20240625_154729949_13.jpg" src="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154729949_13.jpg" target="_self" style="width: 500px; max-width: 100%;">해결
+프로젝터를 천장에 설치하여 투사거리 확보
+가벽 상단을 확장하여 프로젝션 영역 확보
+Edge Blending을 통해 최종 화면 구성
+]]></description><link>sub/01.해외문화-홍보원-k-pop-전시.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/01.해외문화 홍보원 K-POP 전시.md</guid><pubDate>Fri, 28 Aug 2026 15:00:21 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154753029_17.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/001/img/kakaotalk_20240625_154753029_17.jpg&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[04. 다축 스테퍼 모터 제어 시스템]]></title><description><![CDATA[ <img style="width:50%;" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154644033_21.jpg" referrerpolicy="no-referrer" target="_self"> <img style="width:50%;" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_12.jpg" referrerpolicy="no-referrer" target="_self">
+<br><img alt="pasted-image-20240702004827.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702004827.png" target="_self">
+Tablet Controller에서 MQTT를 통해 Raspberry Pi에 접속하고, Raspberry Pi가 SPI 통신으로 각 TMC5160 Motor Driver를 제어하는 구조.
+Raspberry Pi의 GPIO 구성에 따라 Motor Driver 및 Motor 추가 가능
+여러 Raspberry Pi를 연결하여 제어 가능한 모터 수 확장
+Tablet Controller에서 생성한 모터 움직임 저장 가능
+저장된 움직임을 Controller 없이 서버 명령을 통해 실행 가능 6-Point Acceleration
+Sensorless Homing
+StealthChop
+CoolStep
+DcStep
+<br><img alt="pasted-image-20240702151219.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702151219.png" target="_self">
+MQTT 연결 상태 및 설정 관리
+<br><img alt="pasted-image-20240702151253.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702151253.png" target="_self">
+사용할 모터 개수 설정
+Raspberry Pi별 모터 구성
+Motor Name 설정
+CS Pin / Enable Pin 설정
+<br><img alt="pasted-image-20240702151325.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702151325.png" target="_self"><br><img alt="pasted-image-20240702151340.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702151340.png" target="_self">
+TMC5160 Motor Driver에서 제공하는 각종 제어 파라미터 설정
+<br><img alt="pasted-image-20240702151358.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702151358.png" target="_self">
+각 모터의 목표 위치 설정 및 저장
+Sensorless Homing 테스트<br>
+<img alt="pasted-image-20240702151435.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702151435.png" target="_self">
+<br><img alt="pasted-image-20240702151454.png" src="3.personal/ksm/포폴/img/004/img/pasted-image-20240702151454.png" target="_self">
+저장된 파라미터와 위치 값을 조합하여 다수의 모터가 동시에 움직이는 Motion 생성
+TMC5160 Datasheet를 기반으로 Motor Driver의 기능 및 제어 방법 분석.TMC5160 Development Kit와 Trinamic에서 제공하는 Software를 이용하여 Motor Driver의 주요 기능 테스트.<br>
+<img alt="KakaoTalk_20240625_154721073_17.jpg" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_17.jpg" target="_self" style="width: 400px; max-width: 100%;">TMC5160과 Raspberry Pi를 연결하고 SPI 통신을 이용한 기본적인 Motor Control 구현.<br><img alt="KakaoTalk_20240625_154721073_15.jpg" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_15.jpg" target="_self" style="width: 400px; max-width: 100%;">사용할 기능을 확정한 후 Tablet Controller UI 설계 및 구현.<br><img alt="캡처.png" src="3.personal/ksm/포폴/img/004/img/캡처.png" target="_self"><br><img alt="KakaoTalk_20240625_154644033_21.jpg" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154644033_21.jpg" target="_self" style="width: 400px; max-width: 100%;">현장 테스트 과정에서 두 가지 주요 문제 발생.
+멀티프로세싱 자원 관리 문제
+SPI 통신 노이즈 문제
+현장 환경에서 Raspberry Pi와 TMC5160 사이의 SPI 통신에 지속적인 노이즈 발생.
+초기에는 통신 케이블 또는 전원 환경을 원인으로 판단하여 다음과 같은 조치를 진행.
+케이블 Shield 적용
+더 두꺼운 케이블로 교체
+Power Supply 교체
+그러나 문제가 해결되지 않음.Oscilloscope를 이용하여 SPI 신호를 측정한 결과, TMC5160 Driver와 Raspberry Pi 사이의 접촉 불량으로 인해 노이즈가 발생하는 것을 확인.<br>
+<img alt="KakaoTalk_20240625_154644033_01.jpg" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154644033_01.jpg" target="_self" style="width: 400px; max-width: 100%;">기존 연결 케이블을 제거하고 직접 납땜하여 연결한 후 테스트한 결과 SPI 통신 노이즈가 사라지는 것을 확인.<br><img alt="KakaoTalk_20240625_154721073_12.jpg" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_12.jpg" target="_self"><br><img alt="KakaoTalk_20240625_154721073_13.jpg" src="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154721073_13.jpg" target="_self">]]></description><link>sub/04.-다축-스테퍼-모터-제어-시스템.html</link><guid isPermaLink="false">3.Personal/KSM/포폴/Portfolio/sub/04. 다축 스테퍼 모터 제어 시스템.md</guid><pubDate>Fri, 28 Aug 2026 12:41:08 GMT</pubDate><enclosure url="3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154644033_21.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;3.personal/ksm/포폴/img/004/img/kakaotalk_20240625_154644033_21.jpg&quot;&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
